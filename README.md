@@ -6,9 +6,12 @@
  <br>
  - For **param1 = 1** and **param1 = 1**, the output should be
 **solution(param1, param2) = 3.**
+<br>
+
 **input** two integers 
 Guaranteed constraints:
 **-1000 ≤ param1,param2 ≤ 1000.**
+<br>
 **output** a integer The sum of the two inputs.
 
 My solution
@@ -40,4 +43,31 @@ def solution(year):
     return(math.ceil(year / 100))
 
 ```
+
+# 3- checkPalindrome"decaf faced" is a palindrome
+- Given the string, check if it is a palindrome.
+```sh
+Palindrome: A string that doesn't changed when reversed (it reads the same backward and forward).
+- "eye" is a palindrome
+- "decaf faced" is a palindrome
+- "taco cat" is not a palindrome (backwards it spells "tac ocat")
+```
+ - For inputString = "aabaa", the output should be solution(inputString) = true;
+ - For inputString = "abac", the output should be solution(inputString) = false;
+ - For inputString = "a", the output should be solution(inputString) = true.
+
+**Input** 1 ≤ inputString.length ≤ 105.
+A non-empty string consisting of lowercase characters Guaranteed constraints: **1 ≤ inputString.length ≤ 105.**
+**Output** boolean **True** if inputString is a palindrome, **False** otherwise.
+
+My solution
+```
+def solution(inputString):
+    if inputString == ''.join(reversed(inputString)):
+        return True
+    else:
+        return False
+
+```
+
 
