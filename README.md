@@ -95,7 +95,7 @@ def solution(inputArray):
 # 5- shapeArea
 - Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
 - A 1-interesting polygon is just a square with a side of length 1. An n-interesting polygon is obtained by taking the n - 1-interesting polygon and appending 1-interesting polygons to its rim, side by side. You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below.
-- ![image](https://user-images.githubusercontent.com/30151596/162259748-c030063c-7e18-4d87-b49e-1e57359bee61.png)
+![image](https://user-images.githubusercontent.com/30151596/162259748-c030063c-7e18-4d87-b49e-1e57359bee61.png)
 Example
 - For **n = 2**, the output should be **solution(n) = 5;**
 - For **n = 3**, the output should be **solution(n) = 13.**
@@ -116,4 +116,24 @@ Amazing solution
 ```
 def solution(n):
     return n**2 + (n-1)**2
+```
+
+# 6- Make Array Consecutive 2
+- Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that. Help him figure out the minimum number of additional statues needed.
+<br>
+Example
+- For **statues = [6, 2, 3, 8]** , the output should be **solution(statues) = 3**. Ratiorg needs statues of sizes 4, 5 and 7.
+**Input**
+array.integer statues An array of distinct non-negative integers.
+Guaranteed constraints:
+**1 ≤ statues.length ≤ 10,
+0 ≤ statues[i] ≤ 20**
+
+**Output** The minimal number of statues that need to be added to existing statues such that it contains every integer size from an interval [L, R] (for some L, R) and no other sizes.
+
+My solution
+```
+def solution(statues):
+
+    return max(statues) - min(statues) + 1 - len(statues)
 ```
