@@ -171,7 +171,66 @@ def solution(sequence):
 def bad_pair(arr):
     for i in range(len(arr)-1):
         if arr[i]>=arr[i+1]:
-            return i
+            return  
 
     return -1
 ```
+# 8- matrixElementsSum
+After becoming famous, the CodeBots decided to move into a new building together. Each of the rooms has a different cost, and some of them are free, but there's a rumour that all the free rooms are haunted! Since the CodeBots are quite superstitious, they refuse to stay in any of the free rooms, or any of the rooms below any of the free rooms. Given matrix, a rectangular matrix of integers, where each value represents the cost of the room, your task is to return the total sum of all rooms that are suitable for the CodeBots (ie: add up all the values that don't appear below a 0).
+<br>
+Example
+<br>
+- For
+```sh
+matrix = [[0, 1, 1, 2], 
+          [0, 5, 0, 0], 
+          [2, 0, 3, 3]]
+```
+the output should be **solution(matrix) = 9**
+![image](https://user-images.githubusercontent.com/30151596/162610480-cdcae1c6-bf65-4f4a-9720-4083aecfcaeb.png)
+
+- There are several haunted rooms, so we'll disregard them as well as any rooms beneath them. Thus, the answer is 1 + 5 + 1 + 2 = 9.
+- For 
+```sh
+matrix = [[1, 1, 1, 0], 
+          [0, 5, 0, 1], 
+          [2, 1, 3, 10]]
+```
+the output should be **solution(matrix) = 9.**
+![image](https://user-images.githubusercontent.com/30151596/162610562-1923a710-4721-44a3-9e2d-bcfb7309908d.png)
+
+Note that the free room in the final column makes the full column unsuitable for bots (not just the room directly beneath it). Thus, the answer is **1 + 1 + 1 + 5 + 1 = 9.**
+**Input**
+A 2-dimensional array of integers representing the cost of each room in the building. A value of 0 indicates that the room is haunted.
+Guaranteed constraints:
+**1 ≤ matrix.length ≤ 5,**
+**1 ≤ matrix[i].length ≤ 5,**
+**0 ≤ matrix[i][j] ≤ 10.**
+**Output**
+The total price of all the rooms that are suitable for the CodeBots to live in.
+
+
+My solution
+```sh
+import numpy as np
+
+
+def solution(matrix):
+    arr = np.array(matrix)
+    row, col = np.shape(arr)
+    sum = 0
+    col_ = []
+
+    for i in range(row):
+        for j in range(col):
+            if arr[i][j] != 0 and j not in col_:
+                sum += arr[i][j]
+            if arr[i][j] == 0:
+                col_.append(j)
+
+    return sum
+```
+
+
+
+
