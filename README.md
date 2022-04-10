@@ -186,7 +186,7 @@ matrix = [[0, 1, 1, 2],
           [0, 5, 0, 0], 
           [2, 0, 3, 3]]
 ```
-the output should be **solution(matrix) = 9**
+the output should be **solution(matrix) = 9**<br>
 ![image](https://user-images.githubusercontent.com/30151596/162610480-cdcae1c6-bf65-4f4a-9720-4083aecfcaeb.png)
 
 - There are several haunted rooms, so we'll disregard them as well as any rooms beneath them. Thus, the answer is 1 + 5 + 1 + 2 = 9.
@@ -196,7 +196,7 @@ matrix = [[1, 1, 1, 0],
           [0, 5, 0, 1], 
           [2, 1, 3, 10]]
 ```
-the output should be **solution(matrix) = 9.**
+the output should be **solution(matrix) = 9.**<br>
 ![image](https://user-images.githubusercontent.com/30151596/162610562-1923a710-4721-44a3-9e2d-bcfb7309908d.png)
 
 Note that the free room in the final column makes the full column unsuitable for bots (not just the room directly beneath it). Thus, the answer is **1 + 1 + 1 + 5 + 1 = 9.**
