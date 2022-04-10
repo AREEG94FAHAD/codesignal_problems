@@ -15,7 +15,7 @@ Guaranteed constraints:
 **output** a integer The sum of the two inputs.
 
 My solution
-```
+```sh
 def solution(param1, param2):
     return param1 + param2
 ```
@@ -36,7 +36,7 @@ Guaranteed constraints:
 The number of the century the year is in.
 My solution
 
-```
+```sh
 import math
 
 def solution(year):
@@ -61,7 +61,7 @@ A non-empty string consisting of lowercase characters Guaranteed constraints: **
 **Output** boolean **True** if inputString is a palindrome, **False** otherwise.
 
 My solution
-```
+```sh
 def solution(inputString):
     if inputString == ''.join(reversed(inputString)):
         return True
@@ -87,7 +87,7 @@ The largest product of adjacent elements.
 
 My solution
 
-```
+```sh
 def solution(inputArray):
 
     return max([inputArray[i] * inputArray[i + 1] for i in range(len(inputArray) - 1)])
@@ -113,7 +113,7 @@ def solution(n):
 
 ```
 Amazing solution 
-```
+```sh
 def solution(n):
     return n**2 + (n-1)**2
 ```
@@ -133,7 +133,7 @@ Guaranteed constraints:
 **Output** The minimal number of statues that need to be added to existing statues such that it contains every integer size from an interval [L, R] (for some L, R) and no other sizes.
 
 My solution
-```
+```sh
 def solution(statues):
 
     return max(statues) - min(statues) + 1 - len(statues)
