@@ -251,6 +251,41 @@ def solution(inputArray):
     longest_len = max([ len(x) for x in inputArray ])
         
         
-    return [item for item in inputArray if len(item) == longest_len]
+    return [item fo**r item in inputArray if len(item) == longest_len]
+```
+
+# 10- commonCharacterCount
+- Given two strings, find the number of common characters between them.
+- For s1 = "aabcc" and s2 = "adcaa", the output should be **solution(s1, s2) = 3.** Strings have 3 common characters - 2 "a"s and 1 "c".
+**Input** Two string consisting of lowercase English letters.
+Guaranteed constraints:
+**1 ≤ s1.length < 15.**
+**Output**
+a integer: number of common characters between them
+My solution
+```sh
+def solution(s1, s2):
+
+    s_1 = []
+    s_2 = []
+    s_1[:] = s1
+    s_2[:] = s2
+
+    counter = 0
+    for i in s_1:
+        if i in s_2:
+            # del s_2[s_2.index(i)]
+            s_2.pop(s_2.index(i))
+
+            counter += 1
+
+    return counter
+
+```
+An amazing solution
+```sh
+def solution(s1, s2):
+    com = [min(s1.count(i),s2.count(i)) for i in set(s1)]
+    return sum(com)
 ```
 
