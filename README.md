@@ -352,3 +352,38 @@ for i in range(1,len(a)):
             a[i],a[i-1] = a[i-1],a[i]
     return a
 ```
+# 13- reverseInParentheses
+- Write a function that reverses characters in (possibly nested) parentheses in the input string. Input strings will always be well-formed with matching ()s.
+<br>Example<br>
+- For inputString = **"(bar)"**, the output should be **solution(inputString) = "rab";**
+- For inputString = **"foo(bar)baz"**, the output should be **solution(inputString) = "foorabbaz";**
+- For inputString = **"foo(bar)baz(blim)"**, the output should be **solution(inputString) = "foorabbazmilb";**
+- For inputString = **"foo(bar(baz))blim"**, the output should be **solution(inputString) = "foobazrabblim".** Because "foo(bar(baz))blim" becomes "foo(barzab)blim" and then "foobazrabblim".
+
+**Input**
+string inputString
+A string consisting of lowercase English letters and the characters ( and ). It is guaranteed that all parentheses in inputString form a regular bracket sequence.
+**Regular Bracket Sequence**
+```
+A bracket sequence is called regular if it is possible to insert some numbers and signs into the sequence in such a way that the new sequence will represent a correct arithmetic expression.
+```
+Guaranteed constraints:
+**0 ≤ inputString.length ≤ 50**
+**Output**
+a string
+Return inputString, with all the characters that were in parentheses reversed.
+```sh
+def solution(inputString):
+    s = inputString
+    if len(s) < 2:
+        return s
+    chars = list(s)
+    open_bracket_indexes = []
+    for i, c in enumerate(chars):
+        if c == '(':
+            open_bracket_indexes.append(i)
+        elif c == ')':
+            j = open_bracket_indexes.pop()
+            chars[j:i] = chars[i:j:-1]
+    return ''.join(c for c in chars if c not in '()')
+# The idea of soultion is to search for '('and save its index, then if ')' is found, return reverse from index of '(' to index of')' ```
