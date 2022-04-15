@@ -412,3 +412,9 @@ def solution(a):
     return [sum(team1),sum(team2)]
 
 ```
+An amazing solution
+```sh
+def solution(a):
+
+    return [sum(a[::2]),sum(a[1::2])]
+```
