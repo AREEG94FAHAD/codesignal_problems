@@ -418,3 +418,32 @@ def solution(a):
 
     return [sum(a[::2]),sum(a[1::2])]
 ```
+# 15- Add_Border
+- Given a rectangular matrix of characters, add a border of asterisks to it.
+Example
+- For 
+```
+picture = ["abc",
+           "ded"]
+the output should be
+
+solution(picture) = ["*****",
+                      "*abc*",
+                      "*ded*",
+                      "*****"]
+```
+
+**Input**
+array.string picture A non-empty array of non-empty equal-length strings.
+Guaranteed constraints:
+**1 ≤ picture.length ≤ 100,**
+**1 ≤ picture[i].length ≤ 100.**
+**Output**
+array.string The same matrix of characters, framed with a border of asterisks of width 1
+
+My soultion
+```sh
+def solution(picture):
+    top_bottom=len(picture[0])+2
+    return ["*"*top_bottom]+[x.center(l,"*") for x in picture]+["*"*top_bottom]
+```
