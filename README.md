@@ -505,3 +505,60 @@ def solution(inputArray):
 
     return counter
 ```
+
+# 18- palindromeRearranging
+- Given a string, find out if its characters can be rearranged to form a palindrome.
+**Palindrome**
+```
+A string that doesn't changed when reversed (it reads the same backward and forward).
+Examples:
+
+"eye" is a palindrome
+"noon" is a palindrome
+"decaf faced" is a palindrome
+"taco cat" is not a palindrome (backwards it spells "tac ocat")
+"racecars" is not a palindrome (backwards it spells "sracecar")
+```
+- For inputString = "aabb", the output should be **solution(inputString) = true.**
+We can rearrange "aabb" to make "abba", which is a palindrome.
+
+**Input**
+ string inputString:  A string consisting of lowercase English letters.
+
+Guaranteed constraints:
+
+**1 ≤ inputString.length ≤ 50.**
+
+**Output**
+boolean: true if the characters of the inputString can be rearranged to form a palindrome, false otherwise.
+
+```sh
+# Method 1
+def solution(inputString):
+    if len(inputString) == 1:
+        return True
+
+    i = 0
+    counter = 0
+    char_set_list = list(set(inputString))
+    while(i<len(char_set_list)):
+        if  inputString.count(char_set_list[i]) % 2 !=0 :
+            counter+=1
+        if counter == 2:
+            return False
+        i+=1
+        
+    return True
+# Method 2
+def solution(inputString):
+
+    return sum([inputString.count(i)%2 for i in set(inputString)]) <= 1
+```
+
+
+
+
+
+
+
+
