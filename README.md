@@ -577,5 +577,27 @@ def solution(yourLeft, yourRight, friendsLeft, friendsRight):
     return yourLeft+yourRight == friendsLeft+friendsRight
 
 ```
+# 20- arrayMaximalAdjacentDifference
 
+- Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+Example
+- For inputArray = [2, 4, 1, 0], the output should be **solution(inputArray) = 3.**
+**Input**
+array.integer inputArray
 
+Guaranteed constraints:
+**3 ≤ inputArray.length ≤ 10,**
+**-15 ≤ inputArray[i] ≤ 15.**
+
+**Output**
+
+integer The maximal absolute difference.
+
+```sh
+def solution(inputArray):
+    max_value = 0
+    for i in range(0, len(inputArray) - 1):
+        max_value = max(max_value, abs(inputArray[i] - inputArray[i + 1]))
+
+    return max_value
+```
