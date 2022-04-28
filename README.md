@@ -655,7 +655,10 @@ You are given an array of integers representing coordinates of obstacles situate
 Example
 - For inputArray = [5, 3, 6, 7, 9], the output should be **solution(inputArray) = 4.**
 Check out the image below for better understanding:
+<br>
+
 ![image](https://user-images.githubusercontent.com/30151596/165720287-ab93d435-56d8-4e7c-b875-a74f1077d008.png)
+
 **Input**
 array.integer inputArray Non-empty array of positive integers.
 **Output**
@@ -665,7 +668,7 @@ Guaranteed constraints:
 **Output**
 integer
 
-The desired length.
+The desired length.<br>
 My solution
 ```sh
 def solution(inputArray):
