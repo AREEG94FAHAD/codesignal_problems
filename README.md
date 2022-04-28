@@ -532,6 +532,7 @@ Guaranteed constraints:
 **Output**
 boolean: true if the characters of the inputString can be rearranged to form a palindrome, false otherwise.
 
+My solution
 ```sh
 # Method 1
 def solution(inputString):
@@ -571,6 +572,7 @@ Guaranteed constraints:
 
 **Output**  boolean true if you and your friend are equally strong, false otherwise.
 
+My solution
 ```sh
 def solution(yourLeft, yourRight, friendsLeft, friendsRight):
     if max(yourLeft,yourRight) != max(friendsLeft, friendsRight):
@@ -594,6 +596,7 @@ Guaranteed constraints:
 
 integer The maximal absolute difference.
 
+My solution
 ```sh
 def solution(inputArray):
     max_value = 0
@@ -635,6 +638,7 @@ Guaranteed constraints:
 **Output**
 boolean true if inputString satisfies the IPv4 address naming rules, false otherwise.
 ****
+My solution
 ```sh
 def solution(inputString):
 
@@ -644,7 +648,31 @@ def solution(inputString):
         i.isdigit() and 0 <= int(i) < 256 and not (
             len(i) > 1 and i[0] == "0") for i in arr)
 ```
+# 22- avoidObstacles
 
+You are given an array of integers representing coordinates of obstacles situated on a straight line. Assume that you are jumping from the point with coordinate 0 to the right. You are allowed only to make jumps of the same length represented by some integer. Find the minimal length of the jump enough to avoid all the obstacles.
 
+Example
+- For inputArray = [5, 3, 6, 7, 9], the output should be **solution(inputArray) = 4.**
+Check out the image below for better understanding:
+![image](https://user-images.githubusercontent.com/30151596/165720287-ab93d435-56d8-4e7c-b875-a74f1077d008.png)
+**Input**
+array.integer inputArray Non-empty array of positive integers.
+**Output**
+Guaranteed constraints:
+**2 ≤ inputArray.length ≤ 1000,**
+**1 ≤ inputArray[i] ≤ 1000.**
+**Output**
+integer
 
+The desired length.
+My solution
+```sh
+def solution(inputArray):
+    # inputArray.sort()
 
+    for counter in range(2, max(inputArray) + 2):
+        if sum([i % counter != 0 for i in inputArray]) == len(inputArray):
+            return counter
+
+```
