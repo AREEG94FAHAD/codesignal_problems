@@ -758,6 +758,7 @@ solution(matrix) = [[1, 2, 1],
                        [1, 1, 1]]
 ```
 Check out the image below for better understanding:
+
 ![image](https://user-images.githubusercontent.com/30151596/166096299-7fe24c3d-ce43-440e-99b7-93ce1ad03e9b.png)
 
 **Input**
