@@ -799,3 +799,47 @@ def solution(matrix):
                 result_arr[i][j] = va
     return result_arr
 ```
+
+# 25- Array Replace
+
+Given an array of integers, replace all the occurrences of elemToReplace with substitutionElem.
+- For inputArray = [1, 2, 1], elemToReplace = 1, and **substitutionElem = 3, the output should be
+solution(inputArray, elemToReplace, substitutionElem) = [3, 2, 3].**
+Exaple
+**Input**
+array.integer inputArray
+
+
+Guaranteed constraints:
+**0 ≤ inputArray.length ≤ 104,**
+**0 ≤ inputArray[i] ≤ 109.**
+
+**input** integer elemToReplace
+
+Guaranteed constraints:
+**0 ≤ elemToReplace ≤ 109.**
+
+**input** integer substitutionElem
+
+Guaranteed constraints:
+**0 ≤ substitutionElem ≤ 109.**
+
+**Output**
+array.integer
+
+```sh
+import numpy as np
+def solution(inputArray, elemToReplace, substitutionElem):            
+    return [x if x != elemToReplace else substitutionElem for x in inputArray]
+```
+
+
+
+
+
+
+
+
+
+
+
